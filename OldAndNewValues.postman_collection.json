@@ -117,7 +117,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n   \r\n    \"authorName\" : \"qqqqqq\"\r\n}",
+					"raw": "{\r\n   \"authorId\": 1,\r\n    \"authorName\" : \"ccccc\",\r\n    \"dateofbirth\" : \"2002-10-05\"\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
