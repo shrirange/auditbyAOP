@@ -22,7 +22,12 @@ public class AuthorController {
 	}
 	
 	@PostMapping("create")
-	public Author createLigand(@RequestBody Author author){
+	public Author createAuthor(@RequestBody Author author){
+		return authorRepository.save(author);
+	}
+	
+	@PostMapping("update")
+	public Author updateAuthor(@RequestBody Author author){
 		return authorRepository.save(author);
 	}
 	

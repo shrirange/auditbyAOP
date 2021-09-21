@@ -27,7 +27,8 @@ public class AuditLoggerAspect {
 		if (annotatedInterface.isPresent()) {
 			try {
 				Object modifiedObject = pjp.proceed(pjp.getArgs());
-				System.out.println(modifiedObject);
+				logger.info("Old values=" + ((Author)modifiedObject).getSavedState());
+				logger.info("New values=" + modifiedObject);
 				return modifiedObject;
 			} catch (Throwable e) {
 				e.printStackTrace();
