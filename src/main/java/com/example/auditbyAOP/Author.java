@@ -2,16 +2,22 @@ package com.example.auditbyAOP;
 
 import java.io.Serializable;
 import java.sql.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.PostLoad;
 import javax.persistence.Transient;
 
 import org.apache.commons.lang3.SerializationUtils;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 @Entity
 public class Author implements Serializable {
@@ -30,15 +36,11 @@ public class Author implements Serializable {
     private void saveState(){
        this.savedState = SerializationUtils.clone(this); // from apache commons-lang
     }
-	
-	
 
 	@Override
 	public String toString() {
 		return "Author [authorId=" + authorId + ", authorName=" + authorName + ", dateofbirth=" + dateofbirth + "]";
 	}
-
-
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.AUTO)
@@ -51,6 +53,19 @@ public class Author implements Serializable {
 	@Column(name = "dateofbirth")
 	private Date dateofbirth;
 	
+	@JsonManagedReference
+	@Column(name = "publishers")
+	@OneToMany(mappedBy = "author", orphanRemoval = false, cascade = CascadeType.ALL)
+	private List<Publisher> publishers;
+	
+	public List<Publisher> getPublishers() {
+		return publishers;
+	}
+
+	public void setPublishers(List<Publisher> publishers) {
+		this.publishers = publishers;
+	}
+
 	public Integer getAuthorId() {
 		return authorId;
 	}

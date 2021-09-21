@@ -32,7 +32,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n    \"authorName\" : \"bbbbb\"\r\n}",
+					"raw": "{\r\n    \"authorName\" : \"bbbbb\",\r\n    \"dateofbirth\" : \"2000-12-03\",\r\n    \"publishers\"  : [{\r\n       \r\n        \"publisherName\" : \"publisherqqqqq\"\r\n    }\r\n\r\n    ]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -107,6 +107,61 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"savedState\": null,\n    \"authorId\": 1,\n    \"authorName\": \"bbbbb\",\n    \"dateofbirth\": \"2000-12-03\"\n}"
+				},
+				{
+					"name": "createAuthor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"authorName\" : \"bbbbb\",\r\n    \"dateofbirth\" : \"2000-12-03\",\r\n    \"publishers\"  : [{\r\n       \r\n        \"publisherName\" : \"publisherqqqqq\"\r\n    }\r\n\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/author/create",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author",
+								"create"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Sep 2021 10:47:12 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"savedState\": null,\n    \"authorId\": 1,\n    \"authorName\": \"bbbbb\",\n    \"dateofbirth\": \"2000-12-03\",\n    \"publishers\": [\n        {\n            \"publisherId\": 2,\n            \"publisherName\": \"publisherqqqqq\",\n            \"savedState\": null\n        }\n    ]\n}"
 				}
 			]
 		},
@@ -117,7 +172,7 @@
 				"header": [],
 				"body": {
 					"mode": "raw",
-					"raw": "{\r\n   \"authorId\": 1,\r\n    \"authorName\" : \"ccccc\",\r\n    \"dateofbirth\" : \"2002-10-05\"\r\n}",
+					"raw": "{\r\n   \"authorId\": 1,\r\n    \"authorName\" : \"ccccc\",\r\n    \"dateofbirth\" : \"2002-10-05\",\r\n    \"publishers\"  : [{\r\n         \"publisherId\": 2,\r\n        \"publisherName\" : \"publisherqqqqq\"\r\n    }]\r\n}",
 					"options": {
 						"raw": {
 							"language": "json"
@@ -192,6 +247,61 @@
 					],
 					"cookie": [],
 					"body": "{\n    \"savedState\": {\n        \"savedState\": null,\n        \"authorId\": 1,\n        \"authorName\": \"bbbbb\",\n        \"dateofbirth\": \"2000-12-03\"\n    },\n    \"authorId\": 1,\n    \"authorName\": \"ccccc\",\n    \"dateofbirth\": \"2002-10-05\"\n}"
+				},
+				{
+					"name": "updateAuthor",
+					"originalRequest": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"authorId\": 1,\r\n    \"authorName\" : \"ccccc\",\r\n    \"dateofbirth\" : \"2002-10-05\",\r\n    \"publishers\"  : [{\r\n         \"publisherId\": 2,\r\n        \"publisherName\" : \"publisherqqqqq\"\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/author/update",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"author",
+								"update"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						},
+						{
+							"key": "Transfer-Encoding",
+							"value": "chunked"
+						},
+						{
+							"key": "Date",
+							"value": "Tue, 21 Sep 2021 10:48:54 GMT"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=60"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"savedState\": {\n        \"savedState\": null,\n        \"authorId\": 1,\n        \"authorName\": \"ccccc\",\n        \"dateofbirth\": \"2002-10-05\",\n        \"publishers\": [\n            {\n                \"publisherId\": 2,\n                \"publisherName\": \"publisherqqqqq\",\n                \"savedState\": null\n            }\n        ]\n    },\n    \"authorId\": 1,\n    \"authorName\": \"ccccc\",\n    \"dateofbirth\": \"2002-10-05\",\n    \"publishers\": [\n        {\n            \"publisherId\": 2,\n            \"publisherName\": \"publisherqqqqq\",\n            \"savedState\": {\n                \"publisherId\": 2,\n                \"publisherName\": \"publisherqqqqq\",\n                \"savedState\": null\n            }\n        }\n    ]\n}"
 				}
 			]
 		}
